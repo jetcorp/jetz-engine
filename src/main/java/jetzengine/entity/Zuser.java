@@ -7,11 +7,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
-@Setter
+@NoArgsConstructor
 public class Zuser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +27,11 @@ public class Zuser {
     String zname;
 
     LocalDateTime regDateTime;
+
+    public Zuser(String email, String password, String zname, LocalDateTime regDateTime) {
+        this.email = email;
+        this.password = password;
+        this.zname = zname;
+        this.regDateTime = regDateTime;
+    }
 }
