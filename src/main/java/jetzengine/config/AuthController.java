@@ -17,7 +17,7 @@ public class AuthController {
     private final ZuserService zuserService;
 
     @GetMapping("/signup")
-    public String signup() {
+    public String signup(ZuserForm zuserForm) {
         return "auth/signup";
     }
 
