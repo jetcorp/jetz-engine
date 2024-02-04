@@ -15,9 +15,8 @@ public class ZuserService {
     private final PasswordEncoder passwordEncoder;
 
     public Zuser create(String email, String password, String zname) {
-        String encodedPassword = passwordEncoder.encode(password);
 
-        Zuser zuser = new Zuser(email, encodedPassword, zname, LocalDateTime.now());
+        Zuser zuser = new Zuser(email, passwordEncoder.encode(password), zname, LocalDateTime.now());
 
         zuserRepository.save(zuser);
 
