@@ -11,6 +11,7 @@ import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
 
 @Entity
 @Getter
@@ -21,7 +22,7 @@ public class Blog {
     Long id;
 
     @MapsId
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "zname", referencedColumnName = "zname")
     Zuser zname;
 
