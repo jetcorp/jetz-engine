@@ -1,0 +1,6 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+    <h1 th:text="${blog.getTitle()}"></h1>
+    <h2 th:text="${blog.getIntro()}"></h2>
+    <span th:text="|HITS ${blog.getHits()}|"></span>
+</div>

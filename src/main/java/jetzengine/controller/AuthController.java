@@ -1,7 +1,8 @@
-package jetzengine.config;
+package jetzengine.controller;
 
 import jakarta.validation.Valid;
 import jetzengine.form.ZuserForm;
+import jetzengine.service.BlogService;
 import jetzengine.service.ZuserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/auth")
 public class AuthController {
     private final ZuserService zuserService;
+    private final BlogService blogService;
 
     @GetMapping("/signup")
     public String signup(ZuserForm zuserForm) {
