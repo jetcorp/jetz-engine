@@ -6,7 +6,6 @@ import jetzengine.repository.BlogRepository;
 import jetzengine.repository.ZuserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -28,9 +27,7 @@ public class BlogService {
     }
 
     public Blog findBlog(String zname) {
-        Zuser zuser = zuserRepository.findByZname(zname);
-
-        Blog blog = blogRepository.findByZname(zuser);
+        Blog blog = blogRepository.findByZname(zname);
 
         return blog;
     }
